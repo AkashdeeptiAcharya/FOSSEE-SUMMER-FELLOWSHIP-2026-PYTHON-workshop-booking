@@ -9,6 +9,8 @@ import ProfilePage from "./pages/profile";
 import ProposeWorkshopPage from "./pages/propose";
 import RegisterPage from "./pages/register";
 import WorkshopDetailPage from "./pages/workshop-detail";
+import BrowseWorkshops from './components/BrowseWorkshops';
+import InstructorStats from './components/InstructorStats';
 
 function ProtectedRoute({ user, children }) {
   if (!user) {
@@ -100,6 +102,22 @@ function App() {
             element={
               <ProtectedRoute user={authValue.user}>
                 <WorkshopDetailPage auth={authValue} />
+              </ProtectedRoute>
+            }
+          />
+           <Route
+            path="/browse-workshops"
+            element={
+              <ProtectedRoute user={authValue.user}>
+                <BrowseWorkshops auth={authValue} />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/instructor-stats"
+            element={
+              <ProtectedRoute user={authValue.user}>
+                <InstructorStats auth={authValue} />
               </ProtectedRoute>
             }
           />

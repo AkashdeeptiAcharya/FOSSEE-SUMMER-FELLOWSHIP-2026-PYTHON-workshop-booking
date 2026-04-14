@@ -71,10 +71,19 @@ export default function DashboardPage({ auth }) {
         subtitle="This covers the legacy status pages and turns them into one responsive dashboard."
         action={
           auth.user.role === "coordinator" ? (
-            <Link to="/propose" className="rounded-full bg-stone-950 px-4 py-2 text-sm font-semibold text-white">
-              Propose workshop
+            <div className="flex gap-2">
+              <Link to="/propose" className="rounded-full bg-stone-950 px-4 py-2 text-sm font-semibold text-white">
+                Propose workshop
+              </Link>
+              <Link to="/browse-workshops" className="rounded-full bg-sky-600 px-4 py-2 text-sm font-semibold text-white">
+                Browse workshops
+              </Link>
+            </div>
+          ) : (
+            <Link to="/instructor-stats" className="rounded-full bg-stone-950 px-4 py-2 text-sm font-semibold text-white">
+              View Statistics
             </Link>
-          ) : null
+          )
         }
       >
         <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
