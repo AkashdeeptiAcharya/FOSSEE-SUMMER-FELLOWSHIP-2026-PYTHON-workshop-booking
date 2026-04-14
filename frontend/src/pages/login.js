@@ -18,12 +18,13 @@ export default function LoginPage({ auth }) {
     try {
       const data = await api.login(form);
       auth.setSession((current) => ({ ...current, user: data.user }));
-      if (data.requires_activation) {
-        setMessage("The legacy backend still marks new accounts as activation-pending, but the session is live for local testing.");
-      }
       navigate("/dashboard");
     } catch (requestError) {
-      setError(requestError.payload?.message || "Unable to sign in.");
+      if (requestError.payload?.requires_activation) {
+        setMessage(requestError.payload?.message || "Please activate your account before signing in.");
+      } else {
+        setError(requestError.payload?.message || "Unable to sign in.");
+      }
     } finally {
       setSubmitting(false);
     }

@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SectionCard from "../components/SectionCard";
 import { api } from "../lib/api";
 
@@ -29,7 +29,6 @@ function Field({ label, children }) {
 }
 
 export default function RegisterPage({ auth }) {
-  const navigate = useNavigate();
   const [form, setForm] = useState(initialForm);
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
@@ -57,9 +56,7 @@ export default function RegisterPage({ auth }) {
     setMessage("");
     try {
       const data = await api.register(form);
-      auth.setSession((current) => ({ ...current, user: data.user }));
       setMessage(data.message);
-      navigate("/dashboard");
     } catch (requestError) {
       const payloadErrors = requestError.payload?.errors;
       if (payloadErrors) {
