@@ -167,6 +167,16 @@ def user_register(request):
 
 # Workshop views
 
+    from django.http import JsonResponse
+from .models import Workshop
+
+def workshops_api(request):
+    data = list(Workshop.objects.values(
+        "id", "date", "status"
+    ))
+    return JsonResponse(data, safe=False)
+
+
 @login_required
 def workshop_status_coordinator(request):
     """ Workshops proposed by Coordinator """

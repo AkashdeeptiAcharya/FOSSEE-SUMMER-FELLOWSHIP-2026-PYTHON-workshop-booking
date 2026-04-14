@@ -13,8 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.urls import path
 from django.conf.urls import url
-from workshop_app import views
+from workshop_app import api_views, views
+
 
 app_name = "workshop_app"
 
@@ -51,4 +53,20 @@ urlpatterns = [
         name='view_own_profile'),
     url(r'^view_profile/(?P<user_id>\d+)$', views.view_profile,
         name='view_profile'),
+    
+    path('api/session/', api_views.session_api, name='api_session'),
+    path('api/auth/login/', api_views.login_api, name='api_login'),
+    path('api/auth/logout/', api_views.logout_api, name='api_logout'),
+    path('api/register/', api_views.register_api, name='api_register'),
+    path('api/meta/', api_views.session_api, name='api_meta'),
+    path('api/workshop-types/', api_views.workshop_types_api, name='api_workshop_types'),
+    path('api/workshops/', api_views.dashboard_api, name='api_dashboard'),
+    path('api/workshops/<int:workshop_id>/', api_views.workshop_details_api, name='api_workshop_details'),
+    path('api/workshops/<int:workshop_id>/comments/', api_views.workshop_comment_api, name='api_workshop_comment'),
+    path('api/workshops/<int:workshop_id>/accept/', api_views.accept_workshop_api, name='api_accept_workshop'),
+    path('api/workshops/<int:workshop_id>/change-date/', api_views.change_workshop_date_api, name='api_change_workshop_date'),
+    path('api/propose/', api_views.propose_workshop_api, name='api_propose_workshop'),
+    path('api/profile/', api_views.profile_api, name='api_profile'),
+    path('api/profile/update/', api_views.update_profile_api, name='api_profile_update'),
+    path('api/public-stats/', api_views.public_stats_api, name='api_public_stats'),
 ]
