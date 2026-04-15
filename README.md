@@ -1,7 +1,7 @@
 # FOSSEE Workshop Booking — UI/UX Enhancement
 
 > **FOSSEE Fellowship Screening Task** · Python · UI/UX Enhancement
-> Complete UI/UX redesign of the existing Django-based [`workshop_booking`](https://github.com/FOSSEE/workshop_booking) system — implemented as a frontend layer without modifying backend logic.
+> Complete UI/UX redesign of the existing Django-based [`workshop_booking`](https://github.com/FOSSEE/workshop_booking) system, which has been implemented as a frontend layer without modifying backend logic.
 
 ---
 
