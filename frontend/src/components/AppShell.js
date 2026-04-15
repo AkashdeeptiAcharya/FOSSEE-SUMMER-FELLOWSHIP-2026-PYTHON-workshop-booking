@@ -29,8 +29,8 @@ export default function AppShell({ children, user, onLogout }) {
                 FOSSEE
               </span>
               <div>
-                <p className="text-sm font-semibold text-stone-100">Workshop booking, rebuilt for mobile-first clarity</p>
-                <p className="text-xs text-stone-400">Keep the core structure. Upgrade the experience.</p>
+                <p className="text-sm font-semibold text-stone-100">Workshop booking for the modern instructor.</p>
+                <p className="text-xs text-stone-400">Upgrading our community has never been easier.</p>
               </div>
             </Link>
             <nav className="flex flex-wrap items-center gap-2 text-sm">

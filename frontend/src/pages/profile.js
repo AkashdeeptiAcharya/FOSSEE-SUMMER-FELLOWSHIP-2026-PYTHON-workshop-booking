@@ -35,6 +35,13 @@ export default function ProfilePage({ auth }) {
   async function handleSubmit(event) {
     event.preventDefault();
     await api.updateProfile(form);
+    auth.setSession((current) => ({
+      ...current,
+      user: {
+        ...current.user,
+        full_name: `${form.first_name} ${form.last_name}`.trim(),
+      },
+    }));
     setNotice("Profile updated.");
   }
 
@@ -47,15 +54,15 @@ export default function ProfilePage({ auth }) {
         <form className="grid gap-4 md:grid-cols-2" onSubmit={handleSubmit}>
           <label className="block">
             <span className="mb-2 block text-sm font-medium text-stone-700">First name</span>
-            <input value={form.first_name} onChange={(event) => setForm((current) => ({ ...current, first_name: event.target.value }))} className="w-full rounded-2xl border border-stone-200 px-4 py-3 outline-none" />
+            <input value={form.first_name} onChange={(event) => setForm((current) => ({ ...current, first_name: event.target.value }))} className="w-full rounded-2xl border border-stone-200 px-4 py-3 outline-none text-stone-900" />
           </label>
           <label className="block">
             <span className="mb-2 block text-sm font-medium text-stone-700">Last name</span>
-            <input value={form.last_name} onChange={(event) => setForm((current) => ({ ...current, last_name: event.target.value }))} className="w-full rounded-2xl border border-stone-200 px-4 py-3 outline-none" />
+            <input value={form.last_name} onChange={(event) => setForm((current) => ({ ...current, last_name: event.target.value }))} className="w-full rounded-2xl border border-stone-200 px-4 py-3 outline-none text-stone-900" />
           </label>
           <label className="block">
             <span className="mb-2 block text-sm font-medium text-stone-700">Title</span>
-            <select value={form.title} onChange={(event) => setForm((current) => ({ ...current, title: event.target.value }))} className="w-full rounded-2xl border border-stone-200 px-4 py-3 outline-none">
+            <select value={form.title} onChange={(event) => setForm((current) => ({ ...current, title: event.target.value }))} className="w-full rounded-2xl border border-stone-200 px-4 py-3 outline-none text-stone-900">
               <option value="">Select title</option>
               {meta.titles.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -66,11 +73,11 @@ export default function ProfilePage({ auth }) {
           </label>
           <label className="block">
             <span className="mb-2 block text-sm font-medium text-stone-700">Institute</span>
-            <input value={form.institute} onChange={(event) => setForm((current) => ({ ...current, institute: event.target.value }))} className="w-full rounded-2xl border border-stone-200 px-4 py-3 outline-none" />
+            <input value={form.institute} onChange={(event) => setForm((current) => ({ ...current, institute: event.target.value }))} className="w-full rounded-2xl border border-stone-200 px-4 py-3 outline-none text-stone-900" />
           </label>
           <label className="block">
             <span className="mb-2 block text-sm font-medium text-stone-700">Department</span>
-            <select value={form.department} onChange={(event) => setForm((current) => ({ ...current, department: event.target.value }))} className="w-full rounded-2xl border border-stone-200 px-4 py-3 outline-none">
+            <select value={form.department} onChange={(event) => setForm((current) => ({ ...current, department: event.target.value }))} className="w-full rounded-2xl border border-stone-200 px-4 py-3 outline-none text-stone-900">
               <option value="">Select department</option>
               {meta.departments.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -81,15 +88,15 @@ export default function ProfilePage({ auth }) {
           </label>
           <label className="block">
             <span className="mb-2 block text-sm font-medium text-stone-700">Phone number</span>
-            <input value={form.phone_number} onChange={(event) => setForm((current) => ({ ...current, phone_number: event.target.value }))} className="w-full rounded-2xl border border-stone-200 px-4 py-3 outline-none" />
+            <input value={form.phone_number} onChange={(event) => setForm((current) => ({ ...current, phone_number: event.target.value }))} className="w-full rounded-2xl border border-stone-200 px-4 py-3 outline-none text-stone-900" />
           </label>
           <label className="block">
             <span className="mb-2 block text-sm font-medium text-stone-700">Location</span>
-            <input value={form.location} onChange={(event) => setForm((current) => ({ ...current, location: event.target.value }))} className="w-full rounded-2xl border border-stone-200 px-4 py-3 outline-none" />
+            <input value={form.location} onChange={(event) => setForm((current) => ({ ...current, location: event.target.value }))} className="w-full rounded-2xl border border-stone-200 px-4 py-3 outline-none text-stone-900" />
           </label>
           <label className="block">
             <span className="mb-2 block text-sm font-medium text-stone-700">State</span>
-            <select value={form.state} onChange={(event) => setForm((current) => ({ ...current, state: event.target.value }))} className="w-full rounded-2xl border border-stone-200 px-4 py-3 outline-none">
+            <select value={form.state} onChange={(event) => setForm((current) => ({ ...current, state: event.target.value }))} className="w-full rounded-2xl border border-stone-200 px-4 py-3 outline-none text-stone-900">
               <option value="">Select state</option>
               {meta.states.map((option) => (
                 <option key={option.value} value={option.value}>

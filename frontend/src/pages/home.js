@@ -8,14 +8,12 @@ function Hero({ user }) {
   return (
     <section className="grid gap-6 pb-8 pt-4 lg:grid-cols-[1.2fr_0.8fr]">
       <div className="glass-panel grain-overlay rounded-[2.25rem] border border-white/10 p-8 text-white shadow-[0_28px_80px_-42px_rgba(0,0,0,0.85)]">
-        <p className="section-kicker text-amber-300">UI/UX Refresh</p>
+        <p className="section-kicker text-amber-300">HOME PAGE</p>
         <h1 className="mt-4 max-w-3xl text-5xl font-semibold leading-[0.95] sm:text-6xl">
           A lighter, faster workshop portal for coordinators and instructors.
         </h1>
         <p className="mt-4 max-w-2xl text-base text-stone-300 sm:text-lg">
-          The legacy Django app had the right workflows, but the experience was fragmented. This React frontend
-          rebuild keeps the core structure intact while making the portal clearer on mobile, easier to scan, and
-          simpler to act on.
+          Booking workshops is always a hassle as you never know who's available and who isn't. We came up with a solution to this problem, a workshop portal that allows you to easily see the availability of instructors.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
@@ -35,8 +33,8 @@ function Hero({ user }) {
       <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
         {[
           ["Mobile-first navigation", "The important actions are now visible without hunting through templates."],
-          ["Cleaner role flows", "Coordinator and instructor journeys now share the same UI language."],
-          ["Connected backend", "All core workshop actions use live Django data instead of placeholders."],
+          ["Cleaner role flows", "A smooth and hassle free experience for instructors and coordinators."],
+          ["Connected throughout the country", "All core workshop actions use live data from across the nation."],
         ].map(([title, copy]) => (
           <div key={title} className="glass-panel rounded-[2rem] border border-white/10 p-6 text-stone-100 shadow-xl">
             <h2 className="text-3xl font-semibold leading-none">{title}</h2>
@@ -63,7 +61,7 @@ export default function HomePage({ auth }) {
 
       <SectionCard
         title="Workshop Catalog"
-        subtitle="This is the public workshop-type surface from the Django app, redesigned as a clear mobile-first catalog."
+        subtitle="This is the public workshop-type surface from our database, redesigned as a clear catalog."
       >
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {types.map((type) => (

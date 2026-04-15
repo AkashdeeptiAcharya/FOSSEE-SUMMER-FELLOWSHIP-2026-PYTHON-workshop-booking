@@ -35,32 +35,31 @@ export default function LoginPage({ auth }) {
       <div className="glass-panel grain-overlay rounded-[2.25rem] border border-white/10 p-8 text-white shadow-[0_28px_80px_-42px_rgba(0,0,0,0.85)]">
         <p className="section-kicker text-amber-300">Sign In</p>
         <h1 className="mt-4 text-5xl font-semibold leading-[0.95]">Manage workshops without the old template friction.</h1>
-        <p className="mt-5 max-w-xl text-sm leading-7 text-stone-300">
-          The Django backend authenticates with username and password, so this React login stays true to the original
-          behavior while making the flow clearer on small screens.
+        <p className="mt-5 max-w-xl text-sm leading-7 text-stone-500">
+          Booking, scheduling, and tracking workshops has never been easier. Our portal gives you a clear view of all your workshop activities, so you can focus on what matters most.
         </p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           <div className="metric-tile">
-            <p className="text-xs uppercase tracking-[0.28em] text-stone-400">Coordinator</p>
-            <p className="mt-3 text-lg font-semibold">Track proposals and status changes without getting lost.</p>
-            <p className="mt-2 text-sm text-stone-300">Same workflow, calmer hierarchy.</p>
+            <p className="text-xs uppercase tracking-[0.28em] text-stone-700">Coordinator</p>
+            <p className="mt-3 text-lg font-semibold text-stone-700">Track proposals and status changes without getting lost.</p>
+            <p className="mt-2 text-sm text-stone-500">Same workflow, calmer hierarchy.</p>
           </div>
           <div className="metric-tile">
-            <p className="text-xs uppercase tracking-[0.28em] text-stone-400">Instructor</p>
-            <p className="mt-3 text-lg font-semibold">Review requests, accept workshops, and respond faster.</p>
-            <p className="mt-2 text-sm text-stone-300">Everything important is easier to find.</p>
+            <p className="text-xs uppercase tracking-[0.28em] text-stone-700">Instructor</p>
+            <p className="mt-3 text-lg font-semibold text-stone-700">Review requests, accept workshops, and respond faster.</p>
+            <p className="mt-2 text-sm text-stone-500">Everything important is easier to find.</p>
           </div>
         </div>
-        <div className="mt-8 flex flex-wrap gap-3 text-xs uppercase tracking-[0.28em] text-stone-400">
-          <span className="rounded-full border border-white/10 px-3 py-2">Mobile-first</span>
-          <span className="rounded-full border border-white/10 px-3 py-2">Accessible contrast</span>
-          <span className="rounded-full border border-white/10 px-3 py-2">Backend-aligned</span>
+        <div className="mt-8 flex flex-wrap gap-3 text-xs uppercase tracking-[0.28em] text-stone-600">
+          <span className="rounded-full border border-white/10 px-3 py-2">Easy-to-use</span>
+          <span className="rounded-full border border-white/10 px-3 py-2">Hassle-free</span>
+          <span className="rounded-full border border-white/10 px-3 py-2">Works on Mobile Devices</span>
         </div>
       </div>
 
       <SectionCard
         title="Welcome back"
-        subtitle="Use your Django username and password to enter the same core system through a clearer interface."
+        subtitle="Use your username and password to enter the same core system through a clearer interface."
       >
         <form className="space-y-4" onSubmit={handleSubmit}>
           <label className="block">
@@ -99,7 +98,7 @@ export default function LoginPage({ auth }) {
               Create one here
             </Link>
           </p>
-          <p className="text-xs uppercase tracking-[0.2em] text-stone-400">Built on the existing Django auth flow</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-stone-400">AN IIT BOMBAY INITIATIVE</p>
         </div>
       </SectionCard>
     </div>

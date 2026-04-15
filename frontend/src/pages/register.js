@@ -75,27 +75,26 @@ export default function RegisterPage({ auth }) {
     <div className="mx-auto grid max-w-6xl gap-8 pb-10 pt-6 lg:grid-cols-[0.8fr_1.2fr]">
       <div className="glass-panel grain-overlay rounded-[2.25rem] border border-white/10 p-8 text-white shadow-[0_28px_80px_-42px_rgba(0,0,0,0.85)]">
         <p className="section-kicker text-amber-300">Registration</p>
-        <h1 className="mt-4 text-5xl font-semibold leading-[0.95]">Bring the full Django coordinator form into a friendlier React flow.</h1>
+        <h1 className="mt-4 text-5xl font-semibold leading-[0.95]">The power of booking workshops, at the tap of a button.</h1>
         <p className="mt-5 text-sm leading-7 text-stone-300">
-          The original registration page rendered a large table-based form. This version keeps the same required
-          backend fields, but turns them into a readable, mobile-first layout with clearer grouping and better input rhythm.
+          Creating an account gives you access to the full workshop portal, where you can propose workshops, track your proposals, and manage your profile. The same core system, but with a clearer and more connected experience.
         </p>
         <div className="mt-8 rounded-[1.75rem] border border-white/10 bg-white/5 p-5">
-          <p className="text-xs uppercase tracking-[0.3em] text-stone-400">What changed</p>
-          <ul className="mt-4 space-y-2 text-sm text-stone-300">
+          <p className="text-xs uppercase tracking-[0.3em] text-stone-600">What changed</p>
+          <ul className="mt-4 space-y-2 text-sm text-stone-600">
             <li>Full coordinator registration fields are preserved.</li>
             <li>Inputs are grouped to reduce scrolling confusion on mobile.</li>
-            <li>The form submits directly to Django instead of staying a static mock.</li>
+            <li>The form submits directly to the database instead of staying a static mock.</li>
           </ul>
         </div>
         <div className="mt-5 grid gap-3 sm:grid-cols-2">
           <div className="metric-tile">
-            <p className="text-xs uppercase tracking-[0.28em] text-stone-400">Core structure</p>
-            <p className="mt-2 text-base font-semibold">Same data model, same validation, cleaner presentation.</p>
+            <p className="text-xs uppercase tracking-[0.28em] text-stone-600">Core structure</p>
+            <p className="mt-2 text-base font-semibold text-stone-600">Same data model, same validation, now smoother.</p>
           </div>
           <div className="metric-tile">
-            <p className="text-xs uppercase tracking-[0.28em] text-stone-400">Mobile first</p>
-            <p className="mt-2 text-base font-semibold">Shorter scan paths and better rhythm across long forms.</p>
+            <p className="text-xs uppercase tracking-[0.28em] text-stone-600">Mobile first</p>
+            <p className="mt-2 text-base font-semibold  text-stone-600">Shorter scan paths and better rhythm across long forms.</p>
           </div>
         </div>
       </div>
@@ -107,7 +106,7 @@ export default function RegisterPage({ auth }) {
         <form className="grid gap-4 md:grid-cols-2" onSubmit={handleSubmit}>
           <div className="md:col-span-2 rounded-[1.75rem] border border-amber-200 bg-amber-50/80 p-4">
             <p className="text-xs uppercase tracking-[0.24em] text-amber-700">Identity</p>
-            <p className="mt-2 text-sm text-amber-900">Start with the account and contact information Django already requires.</p>
+            <p className="mt-2 text-sm text-amber-900">Start with your account and contact information.</p>
           </div>
           <Field label="Username">
             <input value={form.username} onChange={(event) => updateField("username", event.target.value)} className="input-shell w-full" />

@@ -11,6 +11,7 @@ import RegisterPage from "./pages/register";
 import WorkshopDetailPage from "./pages/workshop-detail";
 import BrowseWorkshops from './components/BrowseWorkshops';
 import InstructorStats from './components/InstructorStats';
+import PublicStats from "./components/PublicStats";
 
 function ProtectedRoute({ user, children }) {
   if (!user) {
@@ -118,6 +119,14 @@ function App() {
             element={
               <ProtectedRoute user={authValue.user}>
                 <InstructorStats auth={authValue} />
+              </ProtectedRoute>
+            }
+          />
+           <Route
+            path="/public-stats"
+            element={
+              <ProtectedRoute user={authValue.user}>
+                <PublicStats />
               </ProtectedRoute>
             }
           />
