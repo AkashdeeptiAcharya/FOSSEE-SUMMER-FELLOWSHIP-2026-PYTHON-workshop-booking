@@ -40,7 +40,7 @@ export default function ProposeWorkshopPage({ auth }) {
             <select
               value={form.workshop_type}
               onChange={(event) => setForm((current) => ({ ...current, workshop_type: event.target.value }))}
-              className="w-full rounded-2xl border border-stone-200 px-4 py-3 outline-none focus:border-sky-400"
+              className="w-full rounded-2xl border border-stone-200 px-4 py-3 text-stone-900 outline-none focus:border-sky-400"
             >
               <option value="">Select workshop</option>
               {types.map((type) => (
@@ -56,7 +56,7 @@ export default function ProposeWorkshopPage({ auth }) {
               type="date"
               value={form.date}
               onChange={(event) => setForm((current) => ({ ...current, date: event.target.value }))}
-              className="w-full rounded-2xl border border-stone-200 px-4 py-3 outline-none focus:border-sky-400"
+              className="w-full rounded-2xl border border-stone-200 px-4 py-3 text-stone-900 outline-none focus:border-sky-400"
             />
           </label>
           <label className="flex items-start gap-3 rounded-2xl border border-stone-200 p-4">
